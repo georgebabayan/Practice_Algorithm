@@ -12,5 +12,5 @@ var twoSum = function(nums, target) {
     }
   }
 };
-// 
+//
 // without using binary tree
