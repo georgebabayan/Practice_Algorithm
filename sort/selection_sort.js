@@ -1,4 +1,4 @@
-/**********************************************************
+/** ********************************************************
  *                                                        *
  *  Problem: Selection Sort                               *
  *                                                        *
@@ -15,27 +15,27 @@
  *  T: (O^2) at all times, S: O(1)                        *
  **********************************************************/
 
- var swap = function(array, firstIndex, secondIndex) {
-  var temp = array[firstIndex]
-  array[firstIndex] = array[secondIndex]
-  array[secondIndex] = temp
-}
+ const swap = function (array, firstIndex, secondIndex) {
+   const temp = array[firstIndex];
+   array[firstIndex] = array[secondIndex];
+   array[secondIndex] = temp;
+ };
 
-var indexOfMinimum = function(array, startIndex) {
-  var minIndex = startIndex,
-  minVal = array[startIndex]
-  for (var i = minIndex + 1; i < array.length; i++ ) {
-    if (array[i] < minVal) {
-      minIndex = i
-      minVal = array[i]
-    }
-  }return minIndex;
-}
+ const indexOfMinimum = function (array, startIndex) {
+   let minIndex = startIndex,
+     minVal = array[startIndex];
+   for (let i = minIndex + 1; i < array.length; i++) {
+     if (array[i] < minVal) {
+       minIndex = i;
+       minVal = array[i];
+     }
+   } return minIndex;
+ };
 
-var selectionSort = function(input){
-  var min
-  for (var i = 0; i < input.length - 1; i++) {
-    min = indexOfMinimum(input, i)
-    swap(input, i, min)
-  }return input
-}
+ const selectionSort = function (input) {
+   let min;
+   for (let i = 0; i < input.length - 1; i+=1) {
+     min = indexOfMinimum(input, i);
+     swap(input, i, min);
+   } return input;
+ };

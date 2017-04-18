@@ -1,4 +1,4 @@
-/**********************************************************************
+/** ********************************************************************
  *                                                                    *
  *  Problem: Merge Sort                                               *
  *                                                                    *
@@ -14,21 +14,18 @@
  *            T: O(n^2) S: O(1)                                       *
  **********************************************************************/
 
- function mergeSort(array)
- {
-   if (array.length < 2)
-   return array;
+ function mergeSort(array) {
+   if (array.length < 2) { return array; }
 
-   var middle = parseInt(array.length / 2);
-   var left   = array.slice(0, middle);
-   var right  = array.slice(middle, array.length);
+   const middle = parseInt(array.length / 2);
+   const left = array.slice(0, middle);
+   const right = array.slice(middle, array.length);
 
    return merge(mergeSort(left), mergeSort(right));
  }
 
- function merge(left, right)
- {
-   var result = [];
+ function merge(left, right) {
+   const result = [];
    while (left.length && right.length) {
      if (left[0] <= right[0]) {
        result.push(left.shift());
@@ -37,11 +34,9 @@
      }
    }
 
-   while (left.length)
-   result.push(left.shift());
+   while (left.length) { result.push(left.shift()); }
 
-   while (right.length)
-   result.push(right.shift());
+   while (right.length) { result.push(right.shift()); }
 
    return result;
  }
